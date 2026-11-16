@@ -2,7 +2,6 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 $titulo = $titulo ?? 'VetCare';
 
-// Verifica se a página atual está dentro de uma subpasta (como /tutores, /animais, etc)
 $em_subpasta = file_exists('../assets/style.css');
 $prefixo = $em_subpasta ? '../' : './';
 ?>
