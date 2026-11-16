@@ -28,7 +28,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header & Navegação */
 .topbar {
   background-color: var(--primary);
   color: #fff;
@@ -76,7 +75,6 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Layout */
 .container {
   max-width: 1120px;
   margin: 32px auto;
@@ -102,7 +100,6 @@ h2 {
   margin-top: 0;
 }
 
-/* Componentes / Painéis */
 .panel, .stat, .login-box {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -132,7 +129,6 @@ h2 {
   margin-top: 4px;
 }
 
-/* Botões & Ações */
 .actions {
   display: flex;
   gap: 10px;
@@ -183,7 +179,6 @@ h2 {
   background-color: #9c313e;
 }
 
-/* Formulários */
 form .field {
   margin-bottom: 16px;
 }
@@ -214,108 +209,4 @@ input:focus, select:focus, textarea:focus {
 textarea {
   min-height: 95px;
   resize: vertical;
-}
-
-/* Tabelas */
-.table-wrap {
-  overflow-x: auto;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  padding: 0;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-}
-
-th, td {
-  text-align: left;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-th {
-  background-color: #edf3f8;
-  color: #29435e;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #fafbfc;
-}
-
-tbody tr:hover {
-  background-color: #f1f5f9;
-}
-
-/* Alertas & Tags */
-.alert {
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  background: #fff1dc;
-  color: #80500b;
-  margin: 16px 0;
-  border-left: 4px solid #f39c12;
-}
-
-.alert.success {
-  background: #e5f7ed;
-  color: #17633c;
-  border-left-color: #2ecc71;
-}
-
-.tag {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: #edf3f8;
-  color: #29435e;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.empty {
-  padding: 32px;
-  text-align: center;
-  color: var(--text-muted);
-}
-
-.login-box {
-  max-width: 420px;
-  margin: 60px auto;
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  color: var(--text-muted);
-  padding: 28px 20px;
-  font-size: 13px;
-  border-top: 1px solid var(--border-color);
-  background: #fff;
-  margin-top: 40px;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .container {
-    margin: 20px auto;
-  }
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .topbar nav {
-    gap: 12px;
-  }
-  .panel {
-    padding: 18px;
-  }
 }
