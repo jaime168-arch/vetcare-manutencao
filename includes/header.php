@@ -4,6 +4,7 @@ $titulo = $titulo ?? 'VetCare';
 
 $em_subpasta = file_exists('../assets/style.css');
 $prefixo = $em_subpasta ? '../' : './';
+$uri = $_SERVER['REQUEST_URI'] ?? '';
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -18,11 +19,11 @@ $prefixo = $em_subpasta ? '../' : './';
   <a class="brand" href="<?= $prefixo ?>index.php">🐾 VetCare</a>
   <nav>
     <?php if (!empty($_SESSION['usuario_id'])): ?>
-      <a href="<?= $prefixo ?>index.php">Painel</a>
-      <a href="<?= $prefixo ?>tutores/index.php">Tutores</a>
-      <a href="<?= $prefixo ?>animais/index.php">Animais</a>
-      <a href="<?= $prefixo ?>consultas/index.php">Consultas</a>
-      <a href="<?= $prefixo ?>chamados/index.php">Suporte</a>
+      <a href="<?= $prefixo ?>index.php" class="<?= str_ends_with(parse_url($uri, PHP_URL_PATH), '/index.php') && !$em_subpasta ? 'active' : '' ?>">Painel</a>
+      <a href="<?= $prefixo ?>tutores/index.php" class="<?= str_contains($uri, '/tutores/') ? 'active' : '' ?>">Tutores</a>
+      <a href="<?= $prefixo ?>animais/index.php" class="<?= str_contains($uri, '/animais/') ? 'active' : '' ?>">Animais</a>
+      <a href="<?= $prefixo ?>consultas/index.php" class="<?= str_contains($uri, '/consultas/') ? 'active' : '' ?>">Consultas</a>
+      <a href="<?= $prefixo ?>chamados/index.php" class="<?= str_contains($uri, '/chamados/') ? 'active' : '' ?>">Suporte</a>
       <a href="<?= $prefixo ?>logout.php">Sair</a>
     <?php endif; ?>
   </nav>
