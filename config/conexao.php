@@ -1,14 +1,11 @@
 <?php
 $host     = '127.0.0.1';
-$port     = '3306'; 
-$dbname   = 'vetcare'; // Certifica-te que a BD no phpMyAdmin se chama vetcare
-$username = 'root';
-$password = '';
+$port     = '3306';$dbname   = 'vetcare';
+$username = 'root';$password = '';
 
 try {
-    $pdo = new PDO("mysql:host={$host};port={$port};dbname={$dbname};charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo = new PDO("mysql:host={$host};port={$port};dbname={$dbname};charset=utf8mb4", $username,$password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Erro ao conectar ao banco: " . $e.getMessage());
+    die("Erro ao conectar ao banco de dados: " . $e->getMessage());
 }
