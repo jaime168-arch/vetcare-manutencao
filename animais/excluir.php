@@ -7,15 +7,15 @@ $id = (int)($_GET['id'] ?? 0);
 
 if ($id > 0) {
     try {
-        // Deleta APENAS o animal com o ID selecionado
         $stmt = $pdo->prepare("DELETE FROM animais WHERE id = ?");
         $stmt->execute([$id]);
+        header('Location: index.php?msg=excluido');
+        exit;
     } catch (PDOException $e) {
-        // Trata erros (ex: se o animal possuir registros vinculados em consultas)
-        error_log("Erro ao excluir animal: " . $e->getMessage());
+        header('Location: index.php?erro=vinculo');
+        exit;
     }
 }
 
-// Redireciona de volta para a lista de animais
 header('Location: index.php');
 exit;
